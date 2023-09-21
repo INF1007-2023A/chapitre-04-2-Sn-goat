@@ -28,7 +28,19 @@ def get_random_sentence(animals, adjectives, fruits):
 	
 
 def encrypt(text, shift):
-	return ""
+    list_letter = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "G", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z","A", "B", "C", "D", "E", "F", "G", "H", "I", "G", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    list_text = []
+    upper_text = text.upper()
+    for charactere in upper_text:
+        list_text.append(charactere)
+    word_encrypted = ""
+    
+    for letter in list_text:
+        if letter in list_letter:
+            shift_letter = list_letter.index(letter) + shift
+            word_encrypted += list_letter[shift_letter]
+    return word_encrypted
+	
 
 def decrypt(encrypted_text, shift):
 	return ""
