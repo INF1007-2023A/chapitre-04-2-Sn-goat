@@ -57,4 +57,3 @@ if __name__ == "__main__":
 	print(encrypt("ABC", 1))
 	print(encrypt("abc 123 XYZ", 3))
 	print(decrypt("DEF 123 ABC", 3))
-
