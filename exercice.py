@@ -43,7 +43,21 @@ def encrypt(text, shift):
 	
 
 def decrypt(encrypted_text, shift):
-	return ""
+	list_letter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z","a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+	list_text = []
+	lower_text = encrypted_text.lower()
+	for charactere in lower_text:
+		list_text.append(charactere)
+	word_decrypted = ""
+		
+	for letter in list_text:
+		if letter in list_letter:
+			shift_letter = list_letter.index(letter) - shift
+			word_decrypted += list_letter[shift_letter]
+	return word_decrypted
+
+print(decrypt("DEF 123 ABC", 3))
+	
 
 
 if __name__ == "__main__":
