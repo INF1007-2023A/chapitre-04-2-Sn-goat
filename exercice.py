@@ -11,28 +11,13 @@ def get_first_part_of_name(name):
 	return sentence
 
 def get_random_sentence(animals, adjectives, fruits):
-	list_animals =[]
-	list_adjectives = []
-	list_fruits = []
-	for being in animals:
-		list_animals.append(being)
-		random.shuffle(list_animals)
-	for words in adjectives:
-		list_adjectives.append(words)
-		random.shuffle(list_adjectives)
-	for food in fruits:
-		list_fruits.append(food)
-		random.shuffle(list_fruits)
-	sentence = f"Aujourd’hui, j’ai vu un {list_animals[0]} s’emparer d’un panier {list_adjectives[0]} plein de {list_fruits[0]}."
+	sentence = f"Aujourd'hui, j'ai vu un {animals[random.randint(0,2)]} s'emparer d'un panier {adjectives[random.randint(0,2)]} plein de {fruits[random.randint(0,2)]}."
 	return sentence
 	
 
 def encrypt(text, shift):
     list_letter = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "G", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z","A", "B", "C", "D", "E", "F", "G", "H", "I", "G", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-    list_text = []
-    upper_text = text.upper()
-    for charactere in upper_text:
-        list_text.append(charactere)
+    list_text = [charactere for charactere in text.upper()]
     word_encrypted = ""
     
     for letter in list_text:
